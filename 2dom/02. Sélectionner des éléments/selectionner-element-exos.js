@@ -34,7 +34,7 @@
 // console.log(titreH3);
 
 // let texte = titreH3.textContent;
-// console.log(texte);
+// console.log(texte).value;
 
 /**
  * -------------------------------------------------------
@@ -124,9 +124,14 @@ console.log(sectionServicesNextBrother);
 
 
 
-function countNbTag (balise){
-   let nbTag = document.getElementsByTagName(balise);
-   return nbTag.length;
+function countNbTag (tag){
+   let nbTag = document.getElementsByTagName(tag);
+ // Vérification si la collection n'est pas vide
+   if (nbTag.length > 0){
+    return nbTag.length;
+   }
+   // Si la balise n'existe pas dans le DOM, retourner 0
+   return 0;
 }
 console.log(countNbTag("p"));
 
@@ -135,7 +140,6 @@ console.log(countNbTag("p"));
 let counter = 0;
 
 const arrayTag = ["h1", "h2", "h3", "p", "section", "div"];
-arrayTag.forEach ((element) => {
-   counter = counter + countNbTag(element);
-})
+arrayTag.forEach ((element) =>
+   counter = counter + countNbTag(element)); // Ajout du nombre de balises)
 console.log(counter);
