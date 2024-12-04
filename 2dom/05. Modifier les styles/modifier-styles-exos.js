@@ -124,6 +124,8 @@ arrayCard.forEach((card) =>
  * --------------------------------
  */
 
+arrayCard.forEach((card) => card.classList.add("card"));
+
 /**
  * --------------------------------
  * 6 - Via JS, créer une <div> comme celles déjà présentes dans le HTML : avec sa classe, son style et ses éléments enfants.
@@ -131,3 +133,14 @@ arrayCard.forEach((card) =>
  * Cool n'est-ce pas ? 🤓
  * --------------------------------
  */
+
+
+let divCard = document.querySelector('.card'); // on sélectionne l'élément à cloner
+
+let cloneDivCard = divCard.cloneNode(true); // copy de l'élément entier div
+
+cloneDivCard.id = 'divClone'; // on attribut un id au clone de la div
+
+document.body.app(cloneDivCard); // On ajoute la div clonée à l'intérieur de la div "cardContainer"
+
+
